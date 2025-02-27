@@ -1,19 +1,28 @@
 <div style="height: 500px; width: 100%;">
-    <google-map height="100%" width="100%" [center]="center" [zoom]="7">
-      
-      <!-- Moving Person Marker -->
-      <map-marker 
-        [position]="movingMarker" 
-        [icon]="personIcon" 
-        title="Tracking Person">
-      </map-marker>
-  
-      <!-- Static Waypoints -->
-      <map-marker *ngFor="let point of waypoints" [position]="point" title="Waypoint"></map-marker>
-      
-      <!-- Path Polyline -->
-      <map-polyline [path]="path" strokeColor="blue" strokeWeight="4"></map-polyline>
-  
-    </google-map>
-  </div>
-  
+  <google-map height="100%" width="100%" [center]="center" [zoom]="7">
+    
+    <!-- Moving Person Marker -->
+    <map-marker 
+      [position]="movingMarker" 
+      [icon]="personIcon" 
+      title="Tracking Person">
+    </map-marker>
+
+    <!-- Static Waypoints -->
+    <map-marker *ngFor="let point of waypoints" [position]="point" title="Waypoint"></map-marker>
+    
+    <!-- Path Polyline -->
+    <map-polyline [path]="path" strokeColor="blue" strokeWeight="4"></map-polyline>
+
+  </google-map>
+</div>
+
+<!-- Control Buttons -->
+<div style="margin-top: 10px; text-align: center;">
+  <button (click)="playAnimation()">Play</button>
+  <button (click)="pauseAnimation()">Pause</button>
+  <button (click)="resetAnimation()">Reset</button>
+  <button (click)="changeSpeed(2)">2X</button>
+  <button (click)="changeSpeed(3)">3X</button>
+  <button (click)="changeSpeed(4)">4X</button>
+</div>
